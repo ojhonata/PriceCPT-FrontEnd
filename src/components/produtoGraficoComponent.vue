@@ -62,12 +62,12 @@ function desenharGrafico() {
         {
           label: 'Preço Atual',
           data: precoAtual,
-          backgroundColor: 'red'
+          backgroundColor: '#F39C12'
         },
         {
           label: 'Preço Antigo',
           data: precosAntigos,
-          backgroundColor: 'yellow'
+          backgroundColor: '#7F8C8D'
         }
       ]
     },
