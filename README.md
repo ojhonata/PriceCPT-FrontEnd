@@ -56,3 +56,11 @@ Inicie o servidor:
 ```sh
 npm run dev
 ```
+
+---
+
+Feito por: <br>
+Cauã Reginato RA: 1988923  <br>
+Jhonata Canevare RA: 1993374 <br>
+Giovanni Ferreira RA: 2005056 <br>
+Eduardo Santos RA:1989619
