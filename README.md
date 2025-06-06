@@ -5,6 +5,15 @@
 PriceCPT é um app web feito com Vue.js 3 que ajuda você a acompanhar a variação de preços de produtos do Mercado Livre.
 Basta colar o link do produto e pronto: o sistema pega os dados e mostra tudo com gráficos usando Chart.js, puxando as informações de uma API.
 
+## Backend
+
+O backend desse projeto foi desenvolvido separadamente, utilizando **.NET 8** com Entity Framework Core e integração com a API do Mercado Livre.
+
+Você pode acessar o repositório do backend aqui:  
+[Link para o repositório do Backend](https://github.com/ojhonata/PriceCPT-BackEnd)
+
+---
+
 ### Funcionalidades implementadas:
 
 - Adição de produtos através da URL do Mercado Livre
