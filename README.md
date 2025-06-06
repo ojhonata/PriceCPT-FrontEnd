@@ -10,7 +10,7 @@ Basta colar o link do produto e pronto: o sistema pega os dados e mostra tudo co
 O backend desse projeto foi desenvolvido separadamente, utilizando **.NET 8** com Entity Framework Core e integração com a API do Mercado Livre.
 
 Você pode acessar o repositório do backend aqui:  
-[Link para o repositório do Backend](https://github.com/ojhonata/PriceCPT-BackEnd)
+[Backend](https://github.com/ojhonata/PriceCPT-BackEnd)
 
 ---
 
