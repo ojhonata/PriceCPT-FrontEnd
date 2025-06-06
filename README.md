@@ -1,29 +1,58 @@
-# CPTsite
+# PriceCPT - Frontend
 
-This template should help get you started developing with Vue 3 in Vite.
+## Descrição do Projeto
 
-## Recommended IDE Setup
+PriceCPT é um app web feito com Vue.js 3 que ajuda você a acompanhar a variação de preços de produtos do Mercado Livre.
+Basta colar o link do produto e pronto: o sistema pega os dados e mostra tudo com gráficos usando Chart.js, puxando as informações de uma API.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+### Funcionalidades implementadas:
 
-## Customize configuration
+- Adição de produtos através da URL do Mercado Livre
+- Exibição de detalhes do produto (nome, imagem e preço atual)
+- Histórico de preços com gráficos interativos
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+### Imagens do Projeto:
 
-## Project Setup
+- Tela de Adição de Produto:  
+![Adicionar Produto](./src/assets/screenshot/adicionar-produto.png)
 
+- Tela de Visualização de Produto:  
+![Visualizar Produto](./src/assets/screenshot/visualizar-produto.png)
+
+
+---
+
+## Tecnologias Utilizadas
+
+- Vue.js 3
+- Vite
+- Axios
+- Chart.js
+- TailwindCSS
+
+---
+
+## Como rodar o projeto localmente
+
+### Pré-requisitos
+
+- Node.js
+- Git
+
+### Instalação
+
+Clone o repositório:
+
+```bash
+git clone https://github.com/ojhonata/PriceCPT-FrontEnd
+
+cd PriceCPT-FrontEnd
+```
+Instale as dependências:
 ```sh
 npm install
 ```
-
-### Compile and Hot-Reload for Development
-
+Inicie o servidor:
 ```sh
 npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
 ```
