@@ -1,13 +1,3 @@
-/*export default class loginService {
-  async Cadastro(data) {
-    const response = await http.post('api/v1/usuario', {
-      nome: data.NOME,
-      email: data.EMAIL,
-      senha: data.SENHA
-    });
-    return response.data;
-  } */
-
 import http from '../src/http-common'
 
 export default class mercadoLivreService {
@@ -19,4 +9,9 @@ export default class mercadoLivreService {
         });
         return response.data
     }
+
+  async atualizarPrecoPorMlb(mlb) {
+    const response = await http.get(`api/MercadoLivre/atualizar-preco/${mlb}`);
+    return response.data;
+  }
 }

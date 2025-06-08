@@ -1,5 +1,5 @@
 <template>
-  <div class="h-[1200px] w-[1800px] p-6 mb-32 rounded">
+  <div class="h-full w-full p-6 rounded">
     <div class="flex gap-4 items-center mb-6">
       <img :src="produto.imagem_url" class="w-24 h-24" />
       <div>
@@ -7,12 +7,15 @@
         <p class="text-lg text-gray-500">Preço atual: R$ {{ produto.preco }}</p>
         <p class="text-lg text-gray-500">Estoque: {{ produto.estoque }}</p>
       </div>
+      <div class="font-bold bg-amber-600 text-gray-700 hover:text-white hover:bg-amber-500 items-center ml-[50px] px-4 py-5 rounded-md cursor-pointer max-w-md">
+        <button @click="selecionarProduto(produto)">Atualizar Produto</button>
+      </div>
     </div>
-    <div class="w-[100%] h-[100%] items-center justify-center bg-gray-200 px-4">
-      <canvas ref="canvas" height="300"></canvas>
+
+    <div class="w-[100%] h-[85%] items-center justify-center bg-gray-200 px-10">
+      <canvas ref="canvas" height="500" width="1000"></canvas>
       <div v-if="!temAlteracoes">
-        <p class="text-gray-400 text-sm mt-2">Este produto ainda não possui histórico de alterações. Exibindo preço
-          atual.</p>
+        <p class="text-gray-400 text-sm mt-2">Este produto ainda não possui histórico de alterações.</p>
       </div>
     </div>
   </div>
@@ -21,6 +24,32 @@
 <script setup>
 import { ref, watch, nextTick, computed } from 'vue';
 import Chart from 'chart.js/auto';
+import MercadoLivreService from "../../services/mercadoLivreService"
+
+const selecionarProduto = async (p) => {
+  const service = new MercadoLivreService()
+
+  try {
+    const resultado = await service.atualizarPrecoPorMlb(p.mlb)
+
+    if (resultado.produto) {
+      produto.value = { ...resultado.produto }
+
+      const index = produtos.value.findIndex(
+        prod => prod.id_produto === resultado.produto.id_produto
+      )
+      if (index !== -1) {
+        produtos.value[index] = { ...resultado.produto }
+      }
+    } else {
+      produto.value = { ...p }
+    }
+  } catch (error) {
+    console.error('Erro ao atualizar produto:', error)
+    produto.value = { ...p }
+  }
+}
+
 
 const props = defineProps({
   produto: Object
@@ -67,7 +96,7 @@ function desenharGrafico() {
         {
           label: 'Preço Antigo',
           data: precosAntigos,
-          backgroundColor: '#7F8C8D'
+          backgroundColor: '#00000'
         },
         {
           label: 'Preço Base',

@@ -31,7 +31,7 @@ export default {
   },
     productSearch: {
     placeholder: "Cole o link do produto do Mercado Livre...",
-    buscar: "Buscar",
+    buscar: "Cadastrar",
     configuracoes: "Configurações",
     alertaSucesso: "Produto cadastrado",
     alertaErro: "Erro ao cadastrar"

@@ -29,7 +29,6 @@
             <p class="text-var">{{ $t('sidebar.preco') }}: R$ {{ produto.preco }}</p>
           </div>
         </div>
-
         <settings />
       </nav>
     </div>
@@ -49,6 +48,7 @@ import usuarioComponent from "../components/usuarioComponent.vue"
 import graficoProduto from "../components/produtoGraficoComponent.vue"
 import ProdutoService from "../../services/produtoService"
 import settings from "../components/settingsComponent.vue"
+
 
 const produtos = ref([])
 const produto = ref(null)

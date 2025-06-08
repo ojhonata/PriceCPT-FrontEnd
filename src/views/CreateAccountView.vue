@@ -36,14 +36,6 @@
         </div>
       </div>
 
-      <div class="mb-6">
-        <label class="block mb-1 text-gray-700">Data nascimento</label>
-        <div class="flex items-center border border-yellow-400 rounded-md px-3 py-2 bg-white">
-          <img class="w-4 h-4 m-2" src="../assets/img/datas.png" alt="">
-          <input type="date" class="w-full outline-none bg-transparent text-gray-700" placeholder="data" />
-        </div>
-      </div>
-
       <button type="submit" class="w-full bg-amber-600 text-white font-semibold py-2 rounded-md hover:bg-amber-800 transition">
         Create
       </button>

@@ -17,13 +17,12 @@
             class="flex-1 outline-none text-sm sm:text-base input-placeholder w-full bg-transparent"
           />
 
-          <router-link
+          <button
             @click="cadastrar"
-            class="w-full sm:w-auto px-4 py-2 rounded-[10px] primary-btn transition"
-            to="/dashboard">
+            class="w-full sm:w-auto px-4 py-2 rounded-[10px] primary-btn transition">
             
             {{ $t('productSearch.buscar') }}
-          </router-link>
+          </button>
 
 
         </div>
@@ -53,10 +52,16 @@ async function cadastrar() {
     const resultado = await service.cadastrarProduto(link.value);
     mensagem.value = resultado.mensagem;
     produto.value = resultado.produto;
+
     alert(t('productSearch.alertaSucesso'));
-    router.push('/dashboard');
+
+    // Só redireciona se houve cadastro ou atualização real
+    if (mensagem.value !== "Nenhuma mudança detectada.") {
+      router.push('/dashboard');
+    }
   } catch (error) {
     alert(t('productSearch.alertaErro'));
   }
 }
+
 </script>
