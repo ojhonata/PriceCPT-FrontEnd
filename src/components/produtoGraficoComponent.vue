@@ -1,17 +1,17 @@
 <template>
-  <div class="h-full w-full p-6 rounded">
+  <div class="h-[1200px] w-[1800px] p-6 mb-32 rounded">
     <div class="flex gap-4 items-center mb-6">
       <img :src="produto.imagem_url" class="w-24 h-24" />
       <div>
         <h2 class="text-2xl font-bold">{{ produto.nome }}</h2>
-        <p class="text-lg text-gray-700">Preço atual: R$ {{ produto.preco }}</p>
-        <p class="text-lg text-gray-700">Estoque: {{ produto.estoque }}</p>
+        <p class="text-lg text-gray-500">Preço atual: R$ {{ produto.preco }}</p>
+        <p class="text-lg text-gray-500">Estoque: {{ produto.estoque }}</p>
       </div>
     </div>
-    <div class="w-[100%] h-[100%] items-center justify-center bg-white px-4">
+    <div class="w-[100%] h-[100%] items-center justify-center bg-gray-200 px-4">
       <canvas ref="canvas" height="300"></canvas>
       <div v-if="!temAlteracoes">
-        <p class="text-gray-500 text-sm mt-2">Este produto ainda não possui histórico de alterações. Exibindo preço
+        <p class="text-gray-400 text-sm mt-2">Este produto ainda não possui histórico de alterações. Exibindo preço
           atual.</p>
       </div>
     </div>
